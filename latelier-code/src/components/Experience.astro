@@ -1,0 +1,98 @@
+---
+const items = [
+	{
+		emoji: '🍽️',
+		title: 'Cuisine de saison',
+		text: 'Des produits sélectionnés au fil des saisons.',
+		image:
+			'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=70',
+	},
+	{
+		emoji: '🍷',
+		title: 'Vins & cocktails',
+		text: 'Une sélection pensée pour accompagner chaque assiette.',
+		image:
+			'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=900&q=70',
+	},
+	{
+		emoji: '❤️',
+		title: 'Une ambiance chaleureuse',
+		text: 'Un lieu convivial pour déjeuner, dîner ou partager un verre.',
+		image:
+			'https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=70',
+	},
+];
+---
+
+<section class="experience" id="experience">
+	<div class="container">
+		<p class="eyebrow eyebrow-dark">L'expérience</p>
+		<h2>Bien plus qu'un repas.</h2>
+		<div class="experience-grid">
+			{
+				items.map((item) => (
+					<div
+						class="experience-card"
+						style={`background-image: linear-gradient(180deg, rgba(27,23,18,0.15) 0%, rgba(27,23,18,0.88) 100%), url(${item.image});`}
+					>
+						<span class="experience-emoji">{item.emoji}</span>
+						<h3>{item.title}</h3>
+						<p>{item.text}</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.experience {
+		padding: 7rem 0;
+		background: var(--color-cream-soft);
+	}
+
+	.experience h2 {
+		font-size: 2.25rem;
+		margin: 0.75rem 0 3rem;
+	}
+
+	.experience-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+
+	.experience-card {
+		position: relative;
+		min-height: 340px;
+		border-radius: 6px;
+		background-size: cover;
+		background-position: center;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		color: var(--color-cream);
+	}
+
+	.experience-emoji {
+		font-size: 1.75rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.experience-card h3 {
+		font-size: 1.3rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.experience-card p {
+		color: var(--color-cream-soft);
+		font-size: 0.95rem;
+	}
+
+	@media (max-width: 860px) {
+		.experience-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

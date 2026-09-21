@@ -1,0 +1,199 @@
+---
+const categories = [
+	{
+		title: 'Entrées',
+		items: [
+			{ name: 'Œuf parfait, crème de champignons', price: '12€' },
+			{ name: 'Tartare de bœuf, pommes croustillantes', price: '16€' },
+			{ name: 'Burrata, tomates anciennes', price: '14€' },
+			{ name: 'Escargots de Bourgogne, beurre persillé', price: '13€' },
+		],
+	},
+	{
+		title: 'Plats',
+		items: [
+			{ name: 'Suprême de volaille, jus aux herbes', price: '24€' },
+			{ name: 'Filet de bar, légumes de saison', price: '27€' },
+			{ name: 'Risotto crémeux aux champignons', price: '22€' },
+			{ name: 'Onglet de bœuf, frites maison, sauce au poivre', price: '26€' },
+		],
+	},
+	{
+		title: 'Desserts',
+		items: [
+			{ name: 'Crème brûlée à la vanille', price: '9€' },
+			{ name: 'Tarte fine aux pommes', price: '9€' },
+			{ name: 'Mousse au chocolat noir', price: '8€' },
+			{ name: 'Paris-brest, crème pralinée', price: '10€' },
+		],
+	},
+];
+
+const drinks = [
+	{
+		title: 'Vins (verre / bouteille)',
+		items: [
+			{ name: 'Chablis, Bourgogne — blanc', price: '8€ / 42€' },
+			{ name: 'Côtes du Rhône — rouge', price: '7€ / 36€' },
+			{ name: 'Sancerre — blanc', price: '9€ / 46€' },
+			{ name: 'Champagne brut', price: '11€ / 58€' },
+		],
+	},
+	{
+		title: 'Cocktails',
+		items: [
+			{ name: 'Spritz maison, agrumes', price: '9€' },
+			{ name: 'Négroni', price: '10€' },
+			{ name: 'Kir royal', price: '8€' },
+			{ name: 'Mule à la française', price: '10€' },
+		],
+	},
+	{
+		title: 'Softs & chauds',
+		items: [
+			{ name: 'Café / Espresso', price: '3€' },
+			{ name: 'Chocolat chaud maison', price: '5€' },
+			{ name: 'Limonade artisanale', price: '5€' },
+			{ name: 'Thé en infusion', price: '4€' },
+		],
+	},
+];
+---
+
+<section class="menu" id="carte">
+	<div class="container">
+		<p class="eyebrow eyebrow-light">Notre sélection</p>
+		<h2>La Carte</h2>
+		<div class="menu-grid">
+			{
+				categories.map((cat) => (
+					<div class="menu-category">
+						<h3>{cat.title}</h3>
+						<ul>
+							{cat.items.map((item) => (
+								<li>
+									<span class="dish-name">{item.name}</span>
+									<span class="dots" aria-hidden="true" />
+									<span class="dish-price">{item.price}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
+		</div>
+
+		<div class="menu-divider" aria-hidden="true"></div>
+
+		<p class="eyebrow eyebrow-light">La cave &amp; le bar</p>
+		<h2>Boissons, vins &amp; cocktails</h2>
+		<div class="menu-grid">
+			{
+				drinks.map((cat) => (
+					<div class="menu-category">
+						<h3>{cat.title}</h3>
+						<ul>
+							{cat.items.map((item) => (
+								<li>
+									<span class="dish-name">{item.name}</span>
+									<span class="dots" aria-hidden="true" />
+									<span class="dish-price">{item.price}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
+		</div>
+
+		<div class="menu-cta">
+			<a href="#reservation" class="btn btn-outline btn-light">Réserver une table</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.menu {
+		padding: 7rem 0;
+		background: var(--color-charcoal);
+		color: var(--color-cream);
+	}
+
+	.menu h2 {
+		font-size: 2.25rem;
+		margin: 0.75rem 0 3rem;
+	}
+
+	.menu-divider {
+		height: 1px;
+		background: rgba(247, 242, 231, 0.12);
+		margin: 4.5rem 0 3.5rem;
+	}
+
+	.menu-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 3rem;
+	}
+
+	.menu-category h3 {
+		font-size: 1.1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--color-olive-soft);
+		margin-bottom: 1.5rem;
+		padding-bottom: 0.75rem;
+		border-bottom: 1px solid rgba(247, 242, 231, 0.15);
+	}
+
+	.menu-category ul {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.menu-category li {
+		display: flex;
+		align-items: baseline;
+		gap: 0.5rem;
+		font-size: 0.98rem;
+	}
+
+	.dish-name {
+		color: var(--color-cream-soft);
+	}
+
+	.dots {
+		flex: 1;
+		border-bottom: 1px dotted rgba(247, 242, 231, 0.25);
+		transform: translateY(-4px);
+	}
+
+	.dish-price {
+		font-family: var(--font-serif);
+		color: var(--color-cream);
+		white-space: nowrap;
+	}
+
+	.menu-cta {
+		text-align: center;
+		margin-top: 4rem;
+	}
+
+	.btn-light {
+		color: var(--color-cream);
+	}
+
+	@media (max-width: 860px) {
+		.menu-grid {
+			grid-template-columns: 1fr;
+			gap: 2.5rem;
+		}
+
+		.menu-divider {
+			margin: 3.5rem 0 2.5rem;
+		}
+	}
+</style>

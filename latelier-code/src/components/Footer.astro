@@ -1,0 +1,89 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+	<div class="container footer-grid">
+		<div>
+			<p class="footer-logo">L'ATELIER</p>
+			<p class="footer-tagline">Bistrot français contemporain</p>
+			<div class="footer-social">
+				<a href="#">Instagram</a>
+				<span aria-hidden="true">·</span>
+				<a href="#">Facebook</a>
+			</div>
+		</div>
+		<div>
+			<p>24 rue de la République</p>
+			<p>75011 Paris</p>
+		</div>
+		<div>
+			<p>Lun — Ven : 12h00–14h30 / 19h00–23h00</p>
+			<p>Sam : 19h00–23h30</p>
+			<p>Dim : Fermé</p>
+		</div>
+	</div>
+	<div class="container footer-bottom">
+		<p>© {year} L'Atelier. Tous droits réservés.</p>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		background: var(--color-charcoal);
+		color: var(--color-cream-soft);
+		padding: 4rem 0 2rem;
+	}
+
+	.footer-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		padding-bottom: 2.5rem;
+		border-bottom: 1px solid rgba(247, 242, 231, 0.1);
+		font-size: 0.9rem;
+	}
+
+	.footer-grid p {
+		margin-bottom: 0.4rem;
+	}
+
+	.footer-logo {
+		font-family: var(--font-serif);
+		font-size: 1.3rem;
+		color: var(--color-cream);
+		letter-spacing: 0.08em;
+	}
+
+	.footer-tagline {
+		color: var(--color-olive-soft);
+		margin-bottom: 1rem;
+	}
+
+	.footer-social {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.footer-social a {
+		color: var(--color-cream-soft);
+	}
+
+	.footer-social a:hover {
+		color: var(--color-cream);
+	}
+
+	.footer-bottom {
+		padding-top: 1.5rem;
+		font-size: 0.8rem;
+		color: rgba(247, 242, 231, 0.5);
+		text-align: center;
+	}
+
+	@media (max-width: 640px) {
+		.footer-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+	}
+</style>

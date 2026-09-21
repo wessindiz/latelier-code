@@ -1,0 +1,64 @@
+---
+const chefImage =
+	'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1200&q=75';
+---
+
+<section class="presentation" id="apropos">
+	<div class="container presentation-grid">
+		<div class="presentation-text">
+			<p class="eyebrow eyebrow-dark">Notre philosophie</p>
+			<h2>Une cuisine simple. Des produits qui parlent.</h2>
+			<p class="body-text">
+				À L'Atelier, nous revisitons les classiques de la cuisine française avec des produits de
+				saison et une approche contemporaine. Une cuisine généreuse, une carte qui évolue au fil
+				des saisons et une salle pensée pour partager un bon moment.
+			</p>
+		</div>
+		<div class="presentation-image">
+			<img src={chefImage} alt="Le chef de L'Atelier au dressage d'un plat" loading="lazy" />
+		</div>
+	</div>
+</section>
+
+<style>
+	.presentation {
+		padding: 7rem 0;
+		background: var(--color-cream);
+	}
+
+	.presentation-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: center;
+	}
+
+	.presentation-text h2 {
+		font-size: 2.25rem;
+		margin: 0.75rem 0 1.5rem;
+		max-width: 480px;
+	}
+
+	.body-text {
+		font-size: 1.05rem;
+		color: #4a4238;
+		max-width: 480px;
+	}
+
+	.presentation-image img {
+		border-radius: 4px;
+		aspect-ratio: 4 / 5;
+		object-fit: cover;
+	}
+
+	@media (max-width: 860px) {
+		.presentation-grid {
+			grid-template-columns: 1fr;
+			gap: 2.5rem;
+		}
+
+		.presentation-image {
+			order: -1;
+		}
+	}
+</style>

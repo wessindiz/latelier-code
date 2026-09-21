@@ -1,0 +1,117 @@
+:root {
+	--color-cream: #f7f2e7;
+	--color-cream-soft: #efe6d3;
+	--color-charcoal: #1b1712;
+	--color-charcoal-soft: #2b241d;
+	--color-brown: #7a4a26;
+	--color-brown-dark: #5b3419;
+	--color-olive: #6e7350;
+	--color-olive-soft: #9ca37c;
+	--font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+	--font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--container-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: var(--font-sans);
+	background: var(--color-cream);
+	color: var(--color-charcoal);
+	-webkit-font-smoothing: antialiased;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-serif);
+	margin: 0;
+	font-weight: 600;
+	line-height: 1.15;
+}
+
+p {
+	margin: 0;
+	line-height: 1.6;
+}
+
+ul {
+	list-style: none;
+}
+
+.container {
+	max-width: var(--container-width);
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.eyebrow {
+	font-family: var(--font-sans);
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	font-size: 0.75rem;
+	font-weight: 600;
+}
+
+.eyebrow-dark {
+	color: var(--color-brown);
+}
+
+.eyebrow-light {
+	color: var(--color-olive-soft);
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.9rem 2rem;
+	font-size: 0.8rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	font-weight: 600;
+	border-radius: 2px;
+	transition:
+		background-color 0.25s ease,
+		border-color 0.25s ease,
+		opacity 0.25s ease;
+	cursor: pointer;
+	border: 1px solid transparent;
+}
+
+.btn-primary {
+	background: var(--color-brown);
+	color: var(--color-cream);
+}
+
+.btn-primary:hover {
+	background: var(--color-brown-dark);
+}
+
+.btn-outline {
+	border-color: currentColor;
+	background: transparent;
+}
+
+.btn-outline:hover {
+	background: rgba(255, 255, 255, 0.08);
+}
