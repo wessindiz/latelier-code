@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# reference screenshots / generated images (working files, not project assets)
+ChatGPT Image*.png
+FireShot Capture*.jpg
